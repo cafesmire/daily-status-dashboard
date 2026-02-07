@@ -10,10 +10,29 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: .25fr 1fr 1fr;
   flex:1;
+  background: #330c98;
 }
 header{
   grid-column: span 2;
-  background-color: #fff;
+
+}
+.mood{
+  display: flex;
+  flex-direction: column;
+  background-color: #13053f;
+  border:1px solid grey;
+  border-radius: 5px;
+  margin: 2em;
+  padding: 1em;
+  text-align: center;
+
+  > div{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin-block: auto;
+  }
+}
+.focus{
 
 }
 
