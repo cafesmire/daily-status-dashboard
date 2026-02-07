@@ -1,0 +1,19 @@
+#root{
+  font-size: 1.5rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.layout{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: .25fr 1fr 1fr;
+  flex:1;
+}
+header{
+  grid-column: span 2;
+  background-color: #fff;
+
+}
+
