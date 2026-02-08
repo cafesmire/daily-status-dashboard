@@ -1,3 +1,5 @@
 export function QuoteCard() {
-	return <div>Quote</div>;
+	return <div className='quote'>
+		<h3>Quote Of The Day</h3>
+	</div>;
 }

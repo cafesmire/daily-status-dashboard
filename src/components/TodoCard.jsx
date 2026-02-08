@@ -1,5 +1,8 @@
 export function TodoCard() {
   return (
-    <div>Todo</div>
+    <div className='todo'>
+
+      <h3>Todo List</h3>
+    </div>
   )
 }

@@ -1,7 +1,10 @@
 export function Header() {
   return (
     <header>
-      header
+      <h1>Daily Status DashBoard</h1>
+      <div>
+        <p>Need Weather Here</p>
+      </div>
     </header>
   )
 }

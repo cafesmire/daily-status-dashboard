@@ -10,19 +10,20 @@ export function MoodCard() {
 			<div>
 				{moods.map((mood, idx) => {
 					return (
-						<span
+						<p
 							onClick={() => setCurrentMood(idx)}
 							style={{
 								fontSize: '4rem',
 								cursor: 'pointer',
-								marginInline: '.25em',
 								border: currentMood === idx ? '1px solid white' : '',
-                borderRadius:'50%'
+								marginInline:'auto',
+								borderRadius: '50%',
+								padding:'1rem'
 							}}
 							key={idx}
 						>
 							{mood}
-						</span>
+						</p>
 					);
 				})}
 			</div>

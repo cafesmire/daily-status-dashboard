@@ -11,28 +11,46 @@
   grid-template-rows: .25fr 1fr 1fr;
   flex:1;
   background: #330c98;
+  max-width: 1500px;
+  margin-inline:auto;
+  width: 100%;
 }
 header{
   grid-column: span 2;
-
+  background-color: #1f1c1f;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
 }
-.mood{
+
+.mood, .focus, .quote, .todo{
   display: flex;
   flex-direction: column;
-  background-color: #13053f;
+  background-image:linear-gradient(to bottom, rgb(82, 20, 99), #2f0733);
   border:1px solid grey;
-  border-radius: 5px;
+  border-radius: 10px;
   margin: 2em;
   padding: 1em;
   text-align: center;
 
-  > div{
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    margin-block: auto;
-  }
+}
+.mood > div{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin-block: auto;
 }
 .focus{
-
+  position: relative;
+  > .focusText{
+    min-height:50%;
+    margin-block: auto;
+    padding: 1rem;
+    outline: none;
+  }
+  > button{
+    position: absolute;
+    bottom:2rem;
+    right:2rem;
+  }
 }
 
