@@ -1,19 +1,19 @@
 #root{
   font-size: 1.5rem;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+  margin-inline: auto;
 }
 
 .layout{
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: .25fr 1fr 1fr;
+  gap:2rem;
   flex:1;
   background: #330c98;
-  max-width: 1500px;
-  margin-inline:auto;
-  width: 100%;
+  overflow: scroll;
 }
 header{
   grid-column: span 2;
@@ -29,10 +29,10 @@ header{
   background-image:linear-gradient(to bottom, rgb(82, 20, 99), #2f0733);
   border:1px solid grey;
   border-radius: 10px;
-  margin: 2em;
-  padding: 1em;
+  padding: 1rem;
   text-align: center;
-
+  width: clamp(300px, 100%, 600px);
+  justify-self: center;
 }
 .mood > div{
   display: grid;
@@ -54,3 +54,11 @@ header{
   }
 }
 
+.todo{
+  position: relative;
+  > button{
+    position:absolute;
+    bottom: 2rem;
+    right:2rem;
+  }
+}
