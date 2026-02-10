@@ -3,10 +3,13 @@ import { getQuoteOfTheDay } from '../actions/dataFetch';
 
 export function QuoteCard() {
 	const [dailyQuote, setDailyQuote] = useState("");
-
+	console.log(dailyQuote)
 
 	useEffect(() => {
+		let didFetch = false;
 		const fetchData = async () => {
+			if (didFetch) return;
+			didFetch = true;
 			const result = await getQuoteOfTheDay();
 			setDailyQuote(result);
 		}
@@ -15,6 +18,6 @@ export function QuoteCard() {
 
 	return <div className='quote'>
 		<h3>Quote Of The Day</h3>
-		<p>{dailyQuote}</p>
+		<p>{dailyQuote.joke}</p>
 	</div>;
 }
