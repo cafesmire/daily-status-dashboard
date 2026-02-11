@@ -1,20 +1,33 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import { TaskInput } from './TaskInput';
 
 export function TodoCard() {
-  const [todoList, setTodoList] = useState([]);
-  const [showModal, setShowModal] = useState(false);
+	const [todoList, setTodoList] = useState([]);
+	const [showModal, setShowModal] = useState(false);
+
+	const deleteTask = (id) => {
+		setTodoList(prev => prev.filter(todo => todo?.id !== id))
+	};
+
 	return (
-		<div className='todo'>
+		<div className="todo">
 			<h3>Todo List</h3>
 			{todoList.length > 0 &&
-				todoList.map((task, idx) => {
-					return <p key={idx}>{task}</p>;
-        })}
-      {showModal &&
-        <TaskInput setTodoList={setTodoList} closeModal={() => setShowModal(false)}/>
-      }
-			<button onClick={() => setShowModal(prev => !prev)}>Add Task</button>
+				todoList.map((todo) => {
+					return (
+						<div key={todo?.id}>
+							<p>{todo?.task}</p>
+							<button onClick={() => deleteTask(todo?.id)}>&times;</button>
+						</div>
+					);
+				})}
+			{showModal && (
+				<TaskInput
+					setTodoList={setTodoList}
+					closeModal={() => setShowModal(false)}
+				/>
+			)}
+			<button onClick={() => setShowModal((prev) => !prev)}>Add Task</button>
 		</div>
 	);
 }

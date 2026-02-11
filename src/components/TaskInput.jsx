@@ -4,7 +4,7 @@ export function TaskInput({setTodoList, closeModal}) {
   const [task, setTask] = useState("");
 
   const saveTodo = () => {
-    setTodoList(prev => prev.concat(task));
+    setTodoList(prev => prev.concat({id:self.crypto.randomUUID(), task}));
     setTask("");
     closeModal();
   }
