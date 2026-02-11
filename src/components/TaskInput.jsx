@@ -12,7 +12,7 @@ export function TaskInput({setTodoList, closeModal}) {
     <dialog open>
       <input type="text" onChange={(e) => setTask(e.target.value)}/>
 
-      <button>Save</button>
+      <button onClick={saveTodo}>Save</button>
     </dialog>
   )
 }
