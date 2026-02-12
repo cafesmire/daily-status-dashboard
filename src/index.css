@@ -1,3 +1,5 @@
+@import 'tailwindcss';
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -42,6 +44,7 @@ img, picture, video, canvas, svg {
 /* 7. Inherit fonts for form controls */
 input, button, textarea, select {
   font: inherit;
+  @apply bg-slate-500 p-2 rounded-md border-slate-200 border;
 }
 
 /* 8. Avoid text overflows */

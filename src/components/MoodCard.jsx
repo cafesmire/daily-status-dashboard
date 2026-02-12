@@ -7,7 +7,7 @@ export function MoodCard() {
 	return (
 		<div className="mood">
 			<h3>How Are You Feeling Today?</h3>
-			<div>
+			<div className='md:flex'>
 				{moods.map((mood, idx) => {
 					return (
 						<p
