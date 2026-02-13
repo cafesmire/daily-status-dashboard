@@ -7,6 +7,7 @@ export function TaskInput({ setTodoList, closeModal }) {
     setTodoList((prev) => prev.concat({ id: self.crypto.randomUUID(), task }));
     setTask("");
     closeModal();
+
   };
   return (
     <>
