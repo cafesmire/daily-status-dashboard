@@ -10,24 +10,25 @@ export function TodoCard() {
 	};
 
 	return (
-		<div className="todo">
+		<div className="todo relative">
 			<h3>Todo List</h3>
 			{todoList.length > 0 &&
 				todoList.map((todo) => {
 					return (
-						<div key={todo?.id}>
+						<div key={todo?.id} className='flex justify-around items-center border-y p-5'>
 							<p>{todo?.task}</p>
 							<button onClick={() => deleteTask(todo?.id)}>&times;</button>
 						</div>
 					);
 				})}
-			{showModal && (
+			{showModal ?
 				<TaskInput
 					setTodoList={setTodoList}
 					closeModal={() => setShowModal(false)}
 				/>
-			)}
-			<button onClick={() => setShowModal((prev) => !prev)}>Add Task</button>
+				:
+				<button onClick={() => setShowModal((prev) => !prev)}>Add Task</button>
+			}
 		</div>
 	);
 }
